@@ -1,63 +1,80 @@
 import com.sun.source.tree.LiteralTree;
 
 import java.util.Arrays;
+import javax.swing.JButton;
 
-public class simple_sort<E extends Comparable<E>> implements Comparable<E> {
+public class simple_sort<E extends Comparable<E>> implements Comparable<E>  {
     private E item;
     private E item_2;
-    int flag_type;
     int[] arr_int = new int[1];
     char[] arr_char = new char[1];
     double[] arr_double = new double[1];
     String[] arr_string = new String[1];
     Object[] arr_object = new Object[1];
-    Object element = 1;
-    public  simple_sort(Object[] arr){
-        this.arr_object = arr;
+    //public simple_sort(){
+
+    //}
+    public  simple_sort(){
+        //this.arr_object = arr;
     }
-    public simple_sort(int[] arr){
+    public Object[] bubble_sorting(Object[] arr){
+        this.arr_object = arr;
+        int size = arr.length;
+        this.arr_object = Arrays.copyOf(arr_object,size);
+        bubble_sorting_object();
+        return arr_object;
+    }
+    public int[] bubble_sorting(int[] arr){
         this.arr_int = arr;
         int size = arr.length;
         this.arr_object = Arrays.copyOf(arr_object,size);
         for(int i = 0; i < size; i++){
             this.arr_object[i] = (int)arr[i];
         }
-        System.out.println(Arrays.toString(arr_object));
-
+        bubble_sorting_object();
+        for (int i = 0; i < size; i++){
+            arr_int[i] = (int)arr_object[i];
+        }
+        return arr_int;
     }
-    public simple_sort(char[] arr){
+    public char[] bubble_sorting(char[] arr){
         this.arr_char = arr;
         int size = arr.length;
         this.arr_object = Arrays.copyOf(arr_object,size);
         for(int i = 0; i < size; i++){
             this.arr_object[i] = (char)arr[i];
         }
-        System.out.println(Arrays.toString(arr_object));
+        bubble_sorting_object();
+        for (int i = 0; i < size; i++){
+            arr_char[i] = (char)arr_object[i];
+        }
+        return arr_char;
     }
-    public simple_sort(String[] arr){
+    public String[] bubble_sorting(String[] arr){
         this.arr_string = arr;
         int size = arr.length;
         this.arr_object = Arrays.copyOf(arr_object,size);
         for(int i = 0; i < size; i++){
             this.arr_object[i] = (String)arr[i];
         }
-        System.out.println(Arrays.toString(arr_object));
+        bubble_sorting_object();
+        for (int i = 0; i < size; i++){
+            arr_string[i] = (String) arr_object[i];
+        }
+        return arr_string;
     }
-    public simple_sort(double[] arr){
+    public double[] bubble_sorting(double[] arr){
         this.arr_double = arr;
         int size = arr.length;
         this.arr_object = Arrays.copyOf(arr_object,size);
         for(int i = 0; i < size; i++){
             this.arr_object[i] = (double)arr[i];
         }
-        System.out.println(Arrays.toString(arr_object));
-    }
-    public int[] bubble_sorting(int[] arr){
         bubble_sorting_object();
-        return arr_int;
-    }
-    public char[] bubble_sorting(char[] arr){
-        return arr_char;
+        for (int i = 0; i < size; i++){
+            arr_double[i] = (double)arr_object[i];
+        }
+        return arr_double;
     }
 
     private void bubble_sorting_object(){
@@ -82,7 +99,7 @@ public class simple_sort<E extends Comparable<E>> implements Comparable<E> {
                 }
             }
         }
-        System.out.println(Arrays.toString(arr_object));
+        //System.out.println(Arrays.toString(arr_object));
     }
     private int[] bubble_sorting_object(int first, int second){
         return arr_int;
