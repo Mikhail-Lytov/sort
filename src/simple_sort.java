@@ -1,7 +1,4 @@
-import com.sun.source.tree.LiteralTree;
-
 import java.util.Arrays;
-import javax.swing.JButton;
 
 public class simple_sort<E extends Comparable<E>> implements Comparable<E>  {
     private E item;
@@ -67,6 +64,17 @@ public class simple_sort<E extends Comparable<E>> implements Comparable<E>  {
             arr_double[i] = (double)arr_object[i];
         }
     }
+
+    private Object[] sorting_by_choice(Object[] arr){
+        this.arr_object = arr;
+        sorting_by_choice_object(0, arr_object.length);
+        return arr_object;
+    }
+    public Object[] sorting_by_choice(Object[] arr, int first, int second){
+        this.arr_object = arr;
+        sorting_by_choice_object(first,second);
+        return arr_object;
+    }
     public Object[] sorting_by_inserts(Object[] arr){
         this.arr_object = arr;
         sorting_by_inserts_object(0,arr_object.length);
@@ -88,6 +96,18 @@ public class simple_sort<E extends Comparable<E>> implements Comparable<E>  {
         return arr_object;
     }
 
+    public int[] sorting_by_choice(int[] arr, int first, int second){
+        interpret(arr);
+        sorting_by_choice_object(first,second);
+        return_int();
+        return arr_int;
+    }
+    public int[] sorting_by_choice(int[] arr){
+        interpret(arr);
+        sorting_by_choice_object(0,arr_object.length);
+        return_int();
+        return arr_int;
+    }
     public int[] sorting_by_inserts(int[] arr, int first, int second){
         interpret(arr);
         sorting_by_inserts_object(first, second);
@@ -113,6 +133,18 @@ public class simple_sort<E extends Comparable<E>> implements Comparable<E>  {
         return arr_int;
     }
 
+    public char[] sorting_by_choice(char[] arr){
+        interpret(arr);
+        sorting_by_choice_object(0,arr_object.length);
+        return_char();
+        return arr_char;
+    }
+    public char[] sorting_by_choice(char[] arr, int first, int second){
+        interpret(arr);
+        sorting_by_choice_object(first,second);
+        return_char();
+        return arr_char;
+    }
     public char[] sorting_by_inserts(char[] arr, int first, int second){
         interpret(arr);
         sorting_by_inserts_object(first, second);
@@ -138,6 +170,18 @@ public class simple_sort<E extends Comparable<E>> implements Comparable<E>  {
         return arr_char;
     }
 
+    public String[] sorting_by_choice(String[] arr){
+        interpret(arr);
+        sorting_by_choice_object(0, arr_object.length);
+        return_String();
+        return arr_string;
+    }
+    public String[] sorting_by_choice(String[] arr, int first, int second){
+        interpret(arr);
+        sorting_by_choice_object(first,second);
+        return_String();
+        return arr_string;
+    }
     public String[] sorting_by_inserts(String[] arr, int first, int second){
         interpret(arr);
         sorting_by_inserts_object(first,second);
@@ -163,6 +207,18 @@ public class simple_sort<E extends Comparable<E>> implements Comparable<E>  {
         return arr_string;
     }
 
+    public double[] sorting_by_choice(double[] arr){
+        interpret(arr);
+        sorting_by_choice_object(0,arr_object.length);
+        return_double();
+        return arr_double;
+    }
+    public double[] sorting_by_choice(double[] arr, int first, int second){
+        interpret(arr);
+        sorting_by_choice_object(first,second);
+        return_double();
+        return arr_double;
+    }
     public double[] sorting_by_inserts(double[] arr){
         interpret(arr);
         sorting_by_inserts_object(0, arr_object.length);
@@ -171,7 +227,7 @@ public class simple_sort<E extends Comparable<E>> implements Comparable<E>  {
     }
     public double[] sorting_by_inserts(double[] arr, int first, int second){
         interpret(arr);
-        sorting_by_inserts_object(second, first);
+        sorting_by_inserts_object(first, second);
         return_double();
         return arr_double;
     }
@@ -189,8 +245,6 @@ public class simple_sort<E extends Comparable<E>> implements Comparable<E>  {
     }
 
     private void bubble_sorting_object(int first, int second){
-        //Object a = "1";
-        //om = (E) a;
         int result ;
         Object variable;
         boolean flag = true;
@@ -218,62 +272,105 @@ public class simple_sort<E extends Comparable<E>> implements Comparable<E>  {
         }
         //System.out.println(Arrays.toString(arr_object));
     }
-    private void sorting_by_inserts_object(int first, int second){
-        boolean flag = true;
-        int result;
-        Object variable;
-        int gap;
-        for (int i = first + 1; i < second - 1; i++){
-            item = (E) arr_object[i];
-            item_2 = (E) arr_object[i-1];
-            result = compareTo(item_2);
-            if(result < 0){
-                variable = arr_object[i];
-                gap = i;
-                for (int j = i - 1; j > first - 1; j--){
-                    item_2 = (E) arr_object[j];
-                    result = compareTo(item_2);
-                    if(result < 0){
-                        arr_object[gap] = arr_object[j];
-                        if(j == first){
-                            arr_object[j] = variable;
-                        }
-                        gap--;
-                    } else if (result >= 0) {
-                        arr_object[gap] = variable;
-                        break;
-                    }
-                }
-            }
-        }
-        for (int i = second - 1; i > first; i--){
-            item = (E) arr_object[i];
-            item_2 = (E) arr_object[i - 1];
-            result = compareTo(item_2);
-            if(result < 0){
-                variable = arr_object[i];
-                gap = i;
-                for (int j = i - 1; j > first - 1;j--){
-                    item_2 = (E) arr_object[j];
-                    result = compareTo(item_2);
-                    if(result < 0){
-                        arr_object[gap] = arr_object[j];
-                        if(j == first){
-                            arr_object[j] = variable;
-                        }
-                        gap--;
-                    } else if (result >= 0) {
-                        arr_object[gap] = variable;
-                        break;
-                    }
-                }
-            }
 
+    private void sorting_by_inserts_object(int first, int second){
+        try {
+            boolean flag = true;
+            int result;
+            Object variable;
+            int gap;
+            for (int i = first + 1; i < second - 1; i++) {
+                item = (E) arr_object[i];
+                item_2 = (E) arr_object[i - 1];
+                result = compareTo(item_2);
+                if (result < 0) {
+                    variable = arr_object[i];
+                    gap = i;
+                    for (int j = i - 1; j > first - 1; j--) {
+                        item_2 = (E) arr_object[j];
+                        result = compareTo(item_2);
+                        if (result < 0) {
+                            arr_object[gap] = arr_object[j];
+                            if (j == first) {
+                                arr_object[j] = variable;
+                            }
+                            gap--;
+                        } else if (result >= 0) {
+                            arr_object[gap] = variable;
+                            break;
+                        }
+                    }
+                }
+            }
+            for (int i = second - 1; i > first; i--) {
+                item = (E) arr_object[i];
+                item_2 = (E) arr_object[i - 1];
+                result = compareTo(item_2);
+                if (result < 0) {
+                    variable = arr_object[i];
+                    gap = i;
+                    for (int j = i - 1; j > first - 1; j--) {
+                        item_2 = (E) arr_object[j];
+                        result = compareTo(item_2);
+                        if (result < 0) {
+                            arr_object[gap] = arr_object[j];
+                            if (j == first) {
+                                arr_object[j] = variable;
+                            }
+                            gap--;
+                        } else if (result >= 0) {
+                            arr_object[gap] = variable;
+                            break;
+                        }
+                    }
+                }
+
+            }
+        }catch (ArrayStoreException e){
+            System.out.println(e.getMessage());
+        }catch (ArrayIndexOutOfBoundsException e){
+            System.out.println(e.getMessage());
         }
+    }
+    private void sorting_by_choice_object(int first, int second){
+        int result;
+        try {
+            Object max_element = arr_object[first];
+            item = (E) max_element;
+            int position_max = 0;
+            for (int j = second - 1; j > first - 1; j--) {
+                max_element = arr_object[first];
+                item = (E) max_element;
+                position_max = first;
+                for (int i = first; i <= j; i++) {
+                    item_2 = (E) arr_object[i];
+                    result = compareTo(item_2);
+                   // System.out.println(result);
+                    if (result < 0) {
+                        max_element = arr_object[i];
+                        item = (E) max_element;
+                        position_max = i;
+                    }
+                }
+                arr_object[position_max] = arr_object[j];
+                arr_object[j] = max_element;
+            }
+        }catch (ArrayStoreException e){
+            System.out.println(e.getMessage());
+        }catch (ArrayIndexOutOfBoundsException e){
+            System.out.println(e.getMessage());
+        }
+
+
     }
     @Override
     public int compareTo(E o) {
-        int result = this.item.compareTo(o);
-        return result;
+        try {
+            int result = this.item.compareTo(o);
+            return result;
+        }catch (ClassCastException e){
+            e.getMessage();
+            return 0;
+        }
     }
 }
