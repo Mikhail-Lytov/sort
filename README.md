@@ -1,13 +1,13 @@
-## Лабораторная работа №5 — Простейшие сортировки ##
-**Задача :** реализовать три алгоритма сортировок: пузырьковую,
-вставками, выбором.
-## Указания по выполнению: ## 
+## The simplest sorting ##
+****Task :** implement three sorting algorithms: bubble,
+inserts, selection.
+## Instructions for implementation: ## 
 
-- лабораторная работа состоит из двух файлов:
-***simple-sort.java*** — прототипы функций, реализация функций;
-***test-simple-sort.java*** — тестирование функций;
-- список требований к функциям (достаточно реализовать три):
-1) сортировка массива целых чисел заданного размера
-2) сортировка любой подпоследовательности массива
-3) сортировка массивов с любыми типами данных
-4) сортировка контейнера по выбору 
+- the laboratory work consists of two files:
+  ***simple-sort.java*** — function prototypes, function implementation;
+  ***test-simple-sort.java*** — testing functions;
+- list of function requirements (it is enough to implement three):
+1) sorting an array of integers of a given size
+2) sorting any subsequence of the array
+3) sorting arrays with any data types
+4) sorting the container by choice
