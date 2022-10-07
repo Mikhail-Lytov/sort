@@ -1,5 +1,5 @@
 ## The simplest sorting ##
-****Task :** implement three sorting algorithms: bubble,
+**Task :** implement three sorting algorithms: bubble,
 inserts, selection.
 ## Instructions for implementation: ## 
 
