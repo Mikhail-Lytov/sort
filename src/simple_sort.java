@@ -3,250 +3,50 @@ import java.util.Arrays;
 public class simple_sort<E extends Comparable<E>> implements Comparable<E>  {
     private E item;
     private E item_2;
-    private int[] arr_int = new int[1];
-    private char[] arr_char = new char[1];
-    private double[] arr_double = new double[1];
-    private String[] arr_string = new String[1];
-    private Object[] arr_object = new Object[1];
+
+    private E[] arr_object;
 
     public  simple_sort(){}
 
-    private void interpret(int[] arr){
-        this.arr_int = arr;
-        int size = arr.length;
-        this.arr_object = Arrays.copyOf(arr_object,size);
-        for(int i = 0; i < size; i++){
-            this.arr_object[i] = (int)arr[i];
-        }
-    }
-    private void interpret(char[] arr){
-        this.arr_char = arr;
-        int size = arr.length;
-        this.arr_object = Arrays.copyOf(arr_object,size);
-        for(int i = 0; i < size; i++){
-            this.arr_object[i] = (char)arr[i];
-        }
-    }
-    private void interpret(String[] arr){
-        this.arr_string = arr;
-        int size = arr.length;
-        this.arr_object = Arrays.copyOf(arr_object,size);
-        for(int i = 0; i < size; i++){
-            this.arr_object[i] = (String)arr[i];
-        }
-    }
-    private void interpret(double[] arr){
-        this.arr_double = arr;
-        int size = arr.length;
-        this.arr_object = Arrays.copyOf(arr_object,size);
-        for(int i = 0; i < size; i++){
-            this.arr_object[i] = (double)arr[i];
-        }
-    }
-
-    private void return_int(){
-        for (int i = 0; i < arr_object.length; i++){
-            arr_int[i] = (int)arr_object[i];
-        }
-    }
-    private void return_char(){
-        for (int i = 0; i < arr_object.length; i++){
-            arr_char[i] = (char)arr_object[i];
-        }
-    }
-    private void return_String(){
-        for (int i = 0; i < arr_object.length; i++) {
-            arr_string[i] = (String) arr_object[i];
-        }
-    }
-    private void return_double(){
-        for (int i = 0; i < arr_object.length; i++){
-            arr_double[i] = (double)arr_object[i];
-        }
-    }
-
-    private Object[] sorting_by_choice(Object[] arr){
-        this.arr_object = arr;
-        sorting_by_choice_object(0, arr_object.length);
-        return arr_object;
-    }
-    public Object[] sorting_by_choice(Object[] arr, int first, int second){
-        this.arr_object = arr;
-        sorting_by_choice_object(first,second);
-        return arr_object;
-    }
-    public Object[] sorting_by_inserts(Object[] arr){
+    public E[] sorting_by_inserts(E[] arr){
         this.arr_object = arr;
         sorting_by_inserts_object(0,arr_object.length);
         return arr_object;
     }
-    public Object[] sorting_by_inserts(Object[] arr, int first, int prev){
+    public E[] sorting_by_inserts(E[] arr, int first, int prev){
         this.arr_object = arr;
         sorting_by_inserts_object(first,prev);
         return arr_object;
     }
-    public Object[] bubble_sorting(Object[] arr){
+    public E[] bubble_sorting(E[] arr){
         this.arr_object = arr;
         bubble_sorting_object(0,arr_object.length);
         return arr_object;
     }
-    public Object[] bubble_sorting(Object[] arr, int first, int second){
+    public E[] bubble_sorting(E[] arr, int first, int second){
         this.arr_object = arr;
         bubble_sorting_object(first,second);
         return arr_object;
     }
 
-    public int[] sorting_by_choice(int[] arr, int first, int second){
-        interpret(arr);
+    public E[] sorting_by_choice(E[] arr, int first, int second){
+        this.arr_object = arr;
         sorting_by_choice_object(first,second);
-        return_int();
-        return arr_int;
+        return arr_object;
     }
-    public int[] sorting_by_choice(int[] arr){
-        interpret(arr);
+    public E[] sorting_by_choice(E[] arr){
+        this.arr_object = arr;
         sorting_by_choice_object(0,arr_object.length);
-        return_int();
-        return arr_int;
-    }
-    public int[] sorting_by_inserts(int[] arr, int first, int second){
-        interpret(arr);
-        sorting_by_inserts_object(first, second);
-        return_int();
-        return arr_int;
-    }
-    public int[] sorting_by_inserts(int[] arr){
-        interpret(arr);
-        sorting_by_inserts_object(0,arr_object.length);
-        return_int();
-        return arr_int;
-    }
-    public int[] bubble_sorting(int[] arr){
-        interpret(arr);
-        bubble_sorting_object(0,arr_object.length);
-        return_int();
-        return arr_int;
-    }
-    public int[] bubble_sorting(int[] arr, int first, int second){
-        interpret(arr);
-        bubble_sorting_object(first,second);
-        return_int();
-        return arr_int;
+        return arr_object;
     }
 
-    public char[] sorting_by_choice(char[] arr){
-        interpret(arr);
-        sorting_by_choice_object(0,arr_object.length);
-        return_char();
-        return arr_char;
-    }
-    public char[] sorting_by_choice(char[] arr, int first, int second){
-        interpret(arr);
-        sorting_by_choice_object(first,second);
-        return_char();
-        return arr_char;
-    }
-    public char[] sorting_by_inserts(char[] arr, int first, int second){
-        interpret(arr);
-        sorting_by_inserts_object(first, second);
-        return_char();
-        return arr_char;
-    }
-    public char[] sorting_by_inserts(char[] arr){
-        interpret(arr);
-        sorting_by_inserts_object(0,arr_object.length);
-        return_char();
-        return arr_char;
-    }
-    public char[] bubble_sorting(char[] arr){
-        interpret(arr);
-        bubble_sorting_object(0,arr_object.length);
-        return_char();
-        return arr_char;
-    }
-    public char[] bubble_sorting(char[] arr, int first, int second) {
-        interpret(arr);
-        bubble_sorting_object(first, second);
-        return_char();
-        return arr_char;
-    }
 
-    public String[] sorting_by_choice(String[] arr){
-        interpret(arr);
-        sorting_by_choice_object(0, arr_object.length);
-        return_String();
-        return arr_string;
-    }
-    public String[] sorting_by_choice(String[] arr, int first, int second){
-        interpret(arr);
-        sorting_by_choice_object(first,second);
-        return_String();
-        return arr_string;
-    }
-    public String[] sorting_by_inserts(String[] arr, int first, int second){
-        interpret(arr);
-        sorting_by_inserts_object(first,second);
-        return_String();
-        return arr_string;
-    }
-    public String[] sorting_by_inserts(String[] arr){
-        interpret(arr);
-        sorting_by_inserts_object(0,arr_object.length);
-        return_String();
-        return arr_string;
-    }
-    public String[] bubble_sorting(String[] arr){
-        interpret(arr);
-        bubble_sorting_object(0,arr_object.length);
-        return_String();
-        return arr_string;
-    }
-    public String[] bubble_sorting(String[] arr, int first, int second) {
-        interpret(arr);
-        bubble_sorting_object(first, second);
-        return_String();
-        return arr_string;
-    }
 
-    public double[] sorting_by_choice(double[] arr){
-        interpret(arr);
-        sorting_by_choice_object(0,arr_object.length);
-        return_double();
-        return arr_double;
-    }
-    public double[] sorting_by_choice(double[] arr, int first, int second){
-        interpret(arr);
-        sorting_by_choice_object(first,second);
-        return_double();
-        return arr_double;
-    }
-    public double[] sorting_by_inserts(double[] arr){
-        interpret(arr);
-        sorting_by_inserts_object(0, arr_object.length);
-        return_double();
-        return arr_double;
-    }
-    public double[] sorting_by_inserts(double[] arr, int first, int second){
-        interpret(arr);
-        sorting_by_inserts_object(first, second);
-        return_double();
-        return arr_double;
-    }
-    public double[] bubble_sorting(double[] arr){
-        interpret(arr);
-        bubble_sorting_object(0,arr_object.length);
-        return_double();
-        return arr_double;
-    }
-    public double[] bubble_sorting(double[] arr, int first, int second) {
-        interpret(arr);
-        bubble_sorting_object(first, second);
-        return_double();
-        return arr_double;
-    }
+
 
     private void bubble_sorting_object(int first, int second){
         int result ;
-        Object variable;
+        E variable;
         boolean flag = true;
         int size = arr_object.length;
         try {
@@ -254,8 +54,8 @@ public class simple_sort<E extends Comparable<E>> implements Comparable<E>  {
             while (flag) {
                 flag = false;
                 for (int i = first; i < (size - 1) && i < (second - 1); i++) {
-                    item = (E) arr_object[i];
-                    item_2 = (E) arr_object[i + 1];
+                    item = arr_object[i];
+                    item_2 = arr_object[i + 1];
                     result = compareTo(item_2);
                     if (result > 0) {
                         variable = arr_object[i + 1];
@@ -277,7 +77,7 @@ public class simple_sort<E extends Comparable<E>> implements Comparable<E>  {
         try {
             boolean flag = true;
             int result;
-            Object variable;
+            E variable;
             int gap;
             for (int i = first + 1; i < second - 1; i++) {
                 item = (E) arr_object[i];
@@ -335,8 +135,8 @@ public class simple_sort<E extends Comparable<E>> implements Comparable<E>  {
     private void sorting_by_choice_object(int first, int second){
         int result;
         try {
-            Object max_element = arr_object[first];
-            item = (E) max_element;
+            E max_element = arr_object[first];
+            item = max_element;
             int position_max = 0;
             for (int j = second - 1; j > first - 1; j--) {
                 max_element = arr_object[first];

@@ -4,10 +4,10 @@ public class test_simple_sort {
     public static void main(String[] args) {
 
         simple_sort sort = new simple_sort();
-        int[] original = {4, 6, 5, 12, 2, 3, 8, 13, 7, 1, 11, 16, 10, 14, 15, 9};
-        int[] arr = {4, 6, 5, 12, 2, 3, 8, 13, 7, 1, 11, 16, 10, 14, 15, 9};
-        int[] arr_1 = {4, 6, 5, 12, 2, 3, 8, 13, 7, 1, 11, 16, 10, 14, 15, 9};
-        int[] arr_2 = {4, 6, 5, 12, 2, 3, 8, 13, 7, 1, 11, 16, 10, 14, 15, 9};
+        Comparable[] original = {4, 6, 5, 12, 2, 3, 8, 13, 7, 1, 11, 16, 10, 14, 15, 9};
+        Comparable[] arr = {4, 6, 5, 12, 2, 3, 8, 13, 7, 1, 11, 16, 10, 14, 15, 9};
+        Comparable[] arr_1 = {4, 6, 5, 12, 2, 3, 8, 13, 7, 1, 11, 16, 10, 14, 15, 9};
+        Comparable[] arr_2 = {4, 6, 5, 12, 2, 3, 8, 13, 7, 1, 11, 16, 10, 14, 15, 9};
 
         System.out.println("изначальный массив: " + Arrays.toString(arr));
         arr = sort.bubble_sorting(arr);
@@ -31,10 +31,10 @@ public class test_simple_sort {
 
         System.out.println();
 
-        char[] original_char = {'b','a','c','f','d','l','l','g'};
-        char[] arr_char = {'b','a','c','f','d','l','l','g'};
-        char[] arr_char_1 = {'b','a','c','f','d','l','l','g'};
-        char[] arr_char_2 = {'b','a','c','f','d','l','l','g'};
+        Comparable[] original_char = {'b','a','c','f','d','l','l','g'};
+        Comparable[] arr_char = {'b','a','c','f','d','l','l','g'};
+        Comparable[] arr_char_1 = {'b','a','c','f','d','l','l','g'};
+        Comparable[] arr_char_2 = {'b','a','c','f','d','l','l','g'};
         System.out.println("Массив символов: " + Arrays.toString(arr_char));
 
         arr_char = sort.bubble_sorting(arr_char);
@@ -58,10 +58,10 @@ public class test_simple_sort {
 
         System.out.println();
 
-        double[] original_doubl = {0.4, 0.6, 0.5, 0.2, 1.2, 3, 9.8, 0.13, 5.7, 0.1, 0.11, 4.16, 6.10, 6.14, 1.5, 3.9};
-        double[] arr_doubl = {0.4, 0.6, 0.5, 0.2, 1.2, 3, 9.8, 0.13, 5.7, 0.1, 0.11, 4.16, 6.10, 6.14, 1.5, 3.9};
-        double[] arr_1_doubl = {0.4, 0.6, 0.5, 0.2, 1.2, 3, 9.8, 0.13, 5.7, 0.1, 0.11, 4.16, 6.10, 6.14, 1.5, 3.9};
-        double[] arr_2_doubl = {0.4, 0.6, 0.5, 0.2, 1.2, 3, 9.8, 0.13, 5.7, 0.1, 0.11, 4.16, 6.10, 6.14, 1.5, 3.9};
+        Comparable[] original_doubl = {0.4, 0.6, 0.5, 0.2, 1.2, 3, 9.8, 0.13, 5.7, 0.1, 0.11, 4.16, 6.10, 6.14, 1.5, 3.9};
+        Comparable[] arr_doubl = {0.4, 0.6, 0.5, 0.2, 1.2, 3, 9.8, 0.13, 5.7, 0.1, 0.11, 4.16, 6.10, 6.14, 1.5, 3.9};
+        Comparable[] arr_1_doubl = {0.4, 0.6, 0.5, 0.2, 1.2, 3, 9.8, 0.13, 5.7, 0.1, 0.11, 4.16, 6.10, 6.14, 1.5, 3.9};
+        Comparable[] arr_2_doubl = {0.4, 0.6, 0.5, 0.2, 1.2, 3, 9.8, 0.13, 5.7, 0.1, 0.11, 4.16, 6.10, 6.14, 1.5, 3.9};
 
         System.out.println("изначальный массив: " + Arrays.toString(arr_1_doubl));
         arr_doubl = sort.bubble_sorting(arr_doubl);
@@ -85,10 +85,10 @@ public class test_simple_sort {
 
         System.out.println();
 
-        String[] original_string = {"Hello", "My_*", "Names_1", "Misha_13","Lab_5"};
-        String[] arr_string = {"Hello", "My_*", "Names_1", "Misha_13","Lab_5"};
-        String[] arr_1_string = {"Hello", "My_*", "Names_1", "Misha_13","Lab_5"};
-        String[] arr_2_string = {"Hello", "My_*", "Names_1", "Misha_13","Lab_5"};
+        Comparable[] original_string = {"Hello", "My_*", "Names_1", "PASHA_13","Lab_5"};
+        Comparable[] arr_string = {"Hello", "My_*", "Names_1", "PASHA_13","Lab_5"};
+        Comparable[] arr_1_string = {"Hello", "My_*", "Names_1", "PASHA_13","Lab_5"};
+        Comparable[] arr_2_string = {"Hello", "My_*", "Names_1", "PASHA_13","Lab_5"};
 
         System.out.println("изначальный массив: " + Arrays.toString(arr_string));
         arr_string = sort.bubble_sorting(arr_string);
